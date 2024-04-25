@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <!-- ====== Boxicons ====== -->
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+    <!-- import font icon (fontawesome) -->
+    <script src="https://kit.fontawesome.com/b8b432d7d3.js" crossorigin="anonymous"></script>
+    <!-- import css file (style.css) -->
+    <link rel="stylesheet" href="../Asset/userProfile.css">
+</head>
+
+<body>
+    
+    <div class="container">
+        <a href="index.html" class="backHome">Back home</a>
+        <div class="profile-card">
+            <div class="profile-header"><!-- profile header section -->
+                <div class="main-profile" id="main-profileU">
+                    
+                </div>
+            </div>
+
+            <div class="profile-body"><!-- profile body section -->
+                <div class="profile-actions">
+                    <section class="bio">
+                        <div class="bio-header">
+                            <i class="fa fa-info-circle"></i>
+                            Intro
+                        </div>
+                        <p class="bio-text">
+                            Believe in yourself and you can do unbelievable things.
+                        </p>
+                    </section>
+                </div>
+
+                <div class="account-info">
+                    <div class="data-to-button" id="buttonProfileP">
+                        
+                    </div>
+                    <div class="data" id="PostBloggerP">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal Edit profile-->
+    <div id="modalEditP">
+        <!-- Modal content-->
+        <div class="close">
+            <i class="bx bx-x"></i>
+        </div>
+        <div class="card-container">
+            <form method="post" class="card-row" id="editUP">
+                
+            </form>
+        </div>
+    </div>
+
+        <!-- Modal Edit profile-->
+        <div id="modalAddPost">
+            <!-- Modal content-->
+            <div class="close">
+                <i class="bx bx-x"></i>
+            </div>
+            <div class="card-container">
+                <form method="post" class="card-row" id="AddPostbloggerP">
+                    <div class="card_picInfo">
+                        <img src="../Asset/img/bg-img/face14.jpg" id="update-img">
+                        <div class="round-img">
+                            <input type="file" id="update-file" name="thumb">
+                            <i class='bx bx-camera'></i>
+                        </div>
+                    </div>
+                    <div class="card_form">
+                        <div class="card_header">
+                            <h1>Add post</h1>
+                        </div>
+                        <div class="form_item">
+                            <span class="form_item_icon bx bx-pen"></span>
+                            <input type="text" placeholder="Title" name="title" id="titleP">
+                        </div>
+                        <div class="form_item">
+                            <span class="form_item_icon bx bx-pen"></span>
+                            <textarea type="text" placeholder="Content" name="content" id="contentP"></textarea>
+                        </div>
+                        <div class="form_item">
+                            <span class="form_item_icon bx bx-pen"></span>
+                            <textarea type="text" placeholder="Summary" name="summary" id="summaryP"></textarea>
+                        </div>
+                        <div class="form_item">
+                            <label class="text-white">Tab</label>
+                            <select name="tabId" class="form-control" id="Listtab">
+                            </select>
+                        </div>
+                        <div class="form_item">
+                            <label class="text-white">Category</label>
+                            <select name="categoryId" class="form-control" id="ListCategory">
+                            </select>
+                        </div>
+    
+                        <div class="btnEdit"><button type="submit">Add</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../Asset/js/UserJs/userProfile.js"></script>
+
+</html>

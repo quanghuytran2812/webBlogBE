@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,100&family=Dosis:wght@700&family=Gilda+Display&display=swap');
+:root {
+    --primary-color: #00B4DB;
+}
+
+body {
+    font-family: 'Gilda Display',serif;
+}
+.pagebillC{
+    background: #fff;
+    padding: 30px 30px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+}
+.row{
+    font-family: 'Gilda Display',serif;
+    font-weight: 500;
+}
+.card thead{
+    background-color: #ccc;
+}
+
+.card .card-body .pull-left h6{
+    font-weight: 700;
+    font-family: 'Barlow Condensed';
+    font-size: 20px;
+    color: #000;
+}
+.card .card-body .flex-md-wrap .text-C{
+    font-weight: 700;
+    font-family: 'Barlow Condensed';
+    font-size: 20px;
+    color: #000;
+}
+.mt-50{
+
+    margin-top: 50px;
+}
+
+.mb-50{
+
+    margin-bottom: 50px;
+}
+
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .1875rem;
+}
+
+.card-img-actions {
+    position: relative;
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.card-title {
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+
+.invoice-color{
+    color: red !important;
+}
+.card-header {
+    padding: .9375rem 1.25rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+a{
+    text-decoration: none !important;
+}
+
+
+.btn-light {
+    color: #333;
+    background-color: #fafafa;
+    border-color: #ddd;
+}
+.header-elements-inline {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+@media (min-width: 768px){
+    .wmin-md-400 {
+        min-width: 400px!important;
+    }
+}
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #2196f3;
+}
+
+.btn-labeled>b {
+    position: absolute;
+    top: -1px;
+    background-color: blue;
+    display: block;
+    line-height: 1;
+    padding: .62503rem;
+}
+
+.card-body .btn{
+    padding: 5px 20px;
+    color: #fff;
+    box-shadow: 0 0 40px 40px #050801 inset, 0 0 0 0 #050801;
+    transition: all 150ms ease-in-out;
+    font-family: 'Barlow Condensed';
+    text-transform: uppercase;
+}
+.card-body .btn:hover{
+    box-shadow: 0 0 10px 0 #03e9f4 inset, 0 0 10px 4px #03e9f4;
+    border-color: #03e9f4;
+    color: #050801;
+}
+.card .text-headH{
+    color: #000;
+}
+.card .text-headH:hover{
+    color: var(--primary-color);
+}
+.footer-bill{
+    display: flex;
+    justify-content: space-evenly;
+}
+/*
+Edit Status*/
+#modalEditSale{
+    position: fixed;
+    display: none;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+#modalEditSale .card-title{
+    margin: 0 0 30px;
+    font-family: 'Barlow Condensed';
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+#modalEditSale .form-group label{
+    font-family: 'Barlow Condensed';
+    font-size: 1rem;
+    font-weight: 700;
+}
+#modalEditSale.showModal{
+    display: block;
+}

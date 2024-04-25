@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!--     Fonts and icons     -->
+        <title>Blog</title>
+        <link rel="shortcut icon" href="images/logoShop.png" type="image/png" />
+        <!-- plugins:css -->
+        <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
+        <!-- ====== Boxicons ====== -->
+        <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../assets/css/style.css">
+    </head>
+    <body>
+        <div class="container-scroller">
+            <!-- partial:partials/_navbar.html -->
+            <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+                <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                    <a class="navbar-brand brand-logo" href="dashboard"><p class="header-title-text">Online Shop</p></a>
+                </div>
+                <div class="navbar-menu-wrapper d-flex align-items-stretch">
+                    <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                        <span class="mdi mdi-menu"></span>
+                    </button>
+                </div>
+            </nav>
+                <!-- partial -->
+                <div class="container-fluid page-body-wrapper">
+                    <!-- partial:partials/_sidebar.html -->
+                    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../Category/CategoryAdmin.html">
+                                    <span class="menu-title">Category List</span>
+                                    <i class="mdi mdi-clipboard-outline menu-icon"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../Tab/ListTab_Admin.html">
+                                    <span class="menu-title">Tab List</span>
+                                    <i class="mdi mdi-clipboard-outline menu-icon"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../Post/ListPost_Admin.html">
+                                    <span class="menu-title">Post List</span>
+                                    <i class="mdi mdi-clipboard-outline menu-icon"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../PostComment/ListPostComment_Admin.html">
+                                    <span class="menu-title">PostComment List</span>
+                                    <i class="mdi mdi-clipboard-outline menu-icon"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../User/ListUser_Admin.html">
+                                    <span class="menu-title">User List</span>
+                                    <i class="mdi mdi-clipboard-outline menu-icon"></i>
+                                </a>
+                            </li>
+                                        
+                        </ul>
+                    </nav> 
+                <!-- partial -->
+                <div class="main-panel">
+                    <div class="content-wrapper">
+                        <div class="page-header">
+                            <h3 class="page-title">
+                                <span class="page-title-icon bg-gradient-primary text-white me-2">
+                                    <i class="mdi mdi-home"></i>
+                                </span> Add New Category
+                            </h3>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 grid-margin">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form id="createCategory" class="forms-sample" method="post" id="AddNewUserAdmin" enctype="multipart/form-data">                                                                             
+                                            <div class="form-group">
+                                                <label for="exampleInputName2">Category Name</label>
+                                                <input name="categoryName" type="text" class="form-control" id="exampleInputName2" placeholder="Category Name">
+                                                <span class="form-message"></span>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                            <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    //Create Category
+    $(document).ready(function () {
+        $('#createCategory').submit(function (e) {
+            e.preventDefault();
+            const form = document.getElementById('createCategory');
+            const formData = new FormData(form);
+            const json = {};
+
+            for (const [key, value] of formData.entries()) {
+                json[key] = value;
+            }
+
+            $.ajax({
+                url: "https://localhost:7034/odata/Category",
+                type: "POST",
+                data: JSON.stringify(json),
+                contentType: "application/json; charset=utf-8",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("token"));
+                },
+                success: function (data) {
+                    alert("You have added success");
+                    window.location.href = 'CategoryAdmin.html';
+                },
+                error: function (xhr, status, error) {
+                    console.log(xhr.responseText);
+                }
+            });
+        });
+    });
+</script>
+
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../assets/js/jquery.cookie.js" type="text/javascript"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../assets/js/off-canvas.js"></script>
+    <script src="../assets/js/hoverable-collapse.js"></script>
+    <script src="../assets/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="../assets/js/file-upload.js"></script>
+    <!-- Custom js for this page -->
+    <script src="../assets/js/dashboard.js"></script>
+    <script src="../assets/js/todolist.js"></script>
+    <!-- End custom js for this page -->
+</body>
+</html>

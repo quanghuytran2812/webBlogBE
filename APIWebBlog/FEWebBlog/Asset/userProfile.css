@@ -1,0 +1,754 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+
+html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-bg: #171717;
+    --secondary-bg: #262626;
+    --accent-bg: #00B4DB;
+
+    --primary-color: #fff;
+    --secondary-color: rgba(255, 255, 255, 70%);
+    --accent-color: #0083B0;
+
+    --border-color: rgba(255, 255, 255, 30%);
+
+    --username-size: 32px;
+    --title-size: 28px;
+    --subtitle: 24px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 100%;
+    background: var(--accent-bg);
+    border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-bg);
+}
+
+/* ---------- body element's */
+.container {
+    max-height: auto;
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card {
+    width: clamp(428px, 990px, 990px);
+    height: auto;
+    background-color: var(--primary-bg);
+    border-radius: 40px;
+    border: 2px solid var(--accent-bg);
+    display: grid;
+    grid-template-rows: 220px auto;
+}
+
+/* ------ profile header section */
+.profile-header {
+    background: url('https://w.wallha.com/ws/14/n3lAkx1d.png') center;
+    background-size: cover;
+    margin: 10px;
+    border-radius: 30px 30px 0 0;
+    position: relative;
+}
+
+.main-profile {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    inset: calc(100% - 75px) auto auto 70px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    border: 10px solid var(--primary-bg);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-names {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--primary-color);
+    background-color: var(--primary-bg);
+    padding: 10px 30px;
+    border-radius: 0 50px 50px 0;
+    transform: translateX(-10px);
+}
+
+.page-title {
+    color: var(--secondary-color);
+}
+
+/* ------- profile body header */
+.profile-body {
+    display: grid;
+    grid-template-columns: 150px auto;
+    gap: 70px;
+    padding: 70px;
+}
+
+.profile-actions {
+    display: grid;
+    grid-template-rows: repeat(2, max-content) auto;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.bio {
+    background-color: rgba(255, 255, 255, 50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.bio-header {
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--secondary-color);
+}
+
+.account-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2fr 1fr;
+    gap: 20px;
+}
+
+.data-to-button {
+    grid-area: 1 / 1 / span 2 / span 3;
+    background-color: var(--secondary-bg);
+    color: var(--secondary-color);
+    padding: 15px;
+    border-radius: 10px;
+    justify-content: end;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.data {
+    grid-column: 1/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+
+.data-item .value {
+    color: var(--accent-color);
+}
+
+.post-container {
+    width: 100%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px;
+    color: #626262;
+}
+
+.post-container:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.post-container .user-post-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.post-container .user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.post-container .user-profile p {
+    margin-bottom: -5px;
+    font-weight: 500;
+    color: #626262;
+    text-align: start;
+}
+
+.post-container .user-profile span {
+    font-size: 12px;
+    color: #9a9a9a;
+}
+
+.post-container .post-text {
+    color: #9a9a9a;
+    margin: 15px 0;
+    font-size: 15px;
+    text-align: start;
+}
+
+.post-container .post-img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+
+.media-link {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-size: var(--subtitle);
+}
+
+
+.post-cover {
+    position: relative;
+    background: url('/images/slider1.jpg') center;
+    background-size: cover;
+    border-radius: 5px;
+}
+
+.last-badge {
+    position: absolute;
+    inset: 3px 3px auto auto;
+    background-color: rgba(0, 0, 0, 70%);
+    color: var(--primary-color);
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.post-title {
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+.post-CTA {
+    all: unset;
+    text-align: center;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.account-info .btn-account-info {
+    all: unset;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.5s;
+}
+
+.account-info .btn-account-info:active {
+    box-shadow: none;
+    transform: translateY(5px);
+}
+
+.account-info .editProfile {
+    color: var(--primary-color);
+    border: 2px solid var(--accent-bg);
+    background-color: var(--accent-bg);
+    box-shadow: 0 10px 20px #0083B0;
+}
+
+.account-info .addPost {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 10px 20px #fff;
+}
+
+/* ------------ media queries */
+@media screen and (max-width: 950px) {
+
+    .data,
+    .data-to-button {
+        grid-column: 1/4;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .profile-card {
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .profile-header {
+        border-radius: 0;
+    }
+
+    .main-profile {
+        inset: calc(100% - 75px) auto auto 50%;
+        transform: translateX(-50%);
+
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-names {
+        transform: translateX(0)
+    }
+
+    .profile-body {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .profile-actions {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 90px;
+    }
+
+    .bio {
+        grid-column: 1/3;
+    }
+
+    .data {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .main-profile .profile-names .username {
+        font-size: 1.2rem;
+    }
+}
+
+/* Modal Edit profile */
+
+#modalEditP,
+#modalAddPost {
+    position: fixed;
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 95%;
+    width: clamp(428px, 990px, 700px);
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    z-index: 10;
+    overflow-y: auto;
+}
+
+#modalEditP::-webkit-scrollbar,
+#modalAddPost::-webkit-scrollbar {
+    display: none;
+}
+
+#modalEditP.showModal,
+#modalAddPost.showModal {
+    display: block;
+}
+
+.container.active::before {
+    position: fixed;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#modalEditP .close,
+#modalAddPost .close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#modalEditP .card-row,
+#modalAddPost .card-row {
+    display: grid;
+    grid-template-columns: 150px auto;
+    gap: 70px;
+    padding: 70px;
+}
+
+.card-row .card_picInfo {
+    display: grid;
+    grid-template-rows: repeat(2, max-content) auto;
+    gap: 10px;
+    position: relative;
+    margin: auto;
+}
+
+.card-row .card_picInfo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card-row .card_picInfo .round-img {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    background: #fff;
+    width: 32px;
+    height: 32px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #000;
+}
+
+.card-row .card_picInfo .round-img input[type='file'] {
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+}
+
+.card-row .card_picInfo .round-img input[type='file']::-webkit-file-upload-button {
+    cursor: pointer;
+}
+
+.card-row .card_form {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    gap: 20px;
+}
+
+.card-row .card_form .card_header h1 {
+    font-family: 'Aclonica', sans-serif;
+    font-size: 2.5rem;
+}
+
+.card_form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card_form .form_item {
+    position: relative;
+}
+
+.card_form .form_item .form_item_icon {
+    position: absolute;
+    top: 10px;
+    left: 1.4rem;
+    font-size: 1.3rem;
+    opacity: 0.4;
+}
+
+.card_form .form_item select {
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    width: 100%;
+    height: 2.5em;
+    padding: 0 4em 0 1em;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center / 1.4em, linear-gradient(to left, rgba(255, 255, 255, 0.3) 3em, rgba(255, 255, 255, 0.2) 3em);
+    color: white;
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.card_form .form_item .text-white{
+    font-family: 'Aclonica', sans-serif;
+    color: #fff;
+}
+.card_form .form_item select option {
+    background: white;
+    color: #000;
+}
+
+.card_form .form_item select::-ms-expand {
+    display: none;
+}
+
+.card_form .form_item textarea,
+.card_form .form_item input {
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, .3);
+    padding: 1rem 1.5rem;
+    border-radius: 100px;
+    width: 100%;
+    padding-left: calc(1rem * 3.5);
+    transition: background .5s;
+}
+
+.card_form .form_item textarea::placeholder,
+.card_form .form_item input::placeholder {
+    opacity: 0.4;
+    color: #000;
+}
+
+.card_form .form_item textarea:focus,
+.card_form .form_item input:focus {
+    background: #fff;
+}
+
+/* animation button */
+#modalEditP .btnEdit,
+#modalAddPost .btnEdit {
+    position: relative;
+    left: 0;
+    padding: 1rem;
+    height: 45px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#modalEditP .btnEdit button,
+#modalAddPost .btnEdit button {
+    position: absolute;
+    font-family: 'Aclonica', sans-serif;
+    border: none;
+    outline: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 10px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    color: #fff;
+    font-weight: 400px;
+    z-index: 1;
+    transition: 0.5s;
+    backdrop-filter: blur(15px);
+}
+
+#modalEditP .btnEdit:hover button,
+#modalAddPost .btnEdit:hover button {
+    letter-spacing: 3px;
+    background: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+}
+
+#modalEditP .btnEdit button::before,
+#modalAddPost .btnEdit button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+    transform: skewX(45deg) translate(0);
+    transition: 0.5s;
+    filter: blur(0px);
+}
+
+#modalEditP .btnEdit:hover button::before,
+#modalAddPost .btnEdit:hover button::before {
+    transform: skewX(45deg) translate(200px);
+}
+
+#modalEditP .btnEdit::before,
+#modalAddPost .btnEdit::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    bottom: -5px;
+    width: 30px;
+    height: 10px;
+    background: #2db2ff;
+    border-radius: 10px;
+    transition: 0.5s;
+    transition-delay: 0.5;
+}
+
+#modalEditP .btnEdit:hover::before,
+#modalAddPost .btnEdit:hover::before {
+    bottom: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+}
+
+#modalEditP .btnEdit::after,
+#modalAddPost .btnEdit::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    top: -5px;
+    width: 30px;
+    height: 10px;
+    background: #2db2ff;
+    border-radius: 10px;
+    transition: 0.5s;
+    transition-delay: 0.5;
+}
+
+#modalEditP .btnEdit:hover::after,
+#modalAddPost .btnEdit:hover::after {
+    top: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+}
+
+#modalEditP .btnEdit::before,
+#modalAddPost .btnEdit::after {
+    background: #2db2ff;
+    box-shadow: 0 0 5px #2db2ff, 0 0 15px #2db2ff, 0 0 30px #2db2ff,
+        0 0 60px #2db2ff;
+}
+
+.card .gender-container {
+    transform: translate(-50%, -50%);
+}
+
+#modalEditP .gender-container,
+#modalAddPost .gender-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.gender-container input[type="radio"] {
+    display: none;
+}
+
+.gender-container div label {
+    position: relative;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.gender-container div label:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+#modalEditP .gender-container input[type="radio"]:checked+label {
+    background-color: #fff;
+    color: #000;
+}
+
+#modalEditP .gender-container input[type="radio"]:checked+label::before {
+    height: 16px;
+    width: 16px;
+    border: none;
+    background-color: #2db2ff;
+}
+
+@media screen and (max-width: 950px) {
+
+    .card_form,
+    .card_picInfo {
+        grid-column: 1/4;
+    }
+
+    #modalEditP .card-container .card_form,
+    #modalAddPost .card-container .card_form {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    #modalEditP,
+    #modalAddPost {
+        width: 90%;
+        max-width: 117rem;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    #modalEditP .card-container,
+    #modalAddPost .card-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: 0 auto;
+    }
+
+    #modalEditP .card-row,
+    #modalAddPost .card-row {
+        padding: 0;
+    }
+
+    #modalEditP .card-container .card_form,
+    #modalAddPost .card-container .card_form {
+        width: 100%;
+        text-align: center;
+    }
+
+    #modalEditP .card-container .card_form h1,
+    #modalAddPost .card-container .card_form h1 {
+        font-size: 30px;
+    }
+}
+
+.backHome{
+    font-family: 'Aclonica', sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;   
+    border-radius: 0 15px 15px 0;
+}
+.backHome:hover{
+    color: #2db2ff;
+}
